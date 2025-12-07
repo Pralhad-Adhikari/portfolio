@@ -8,19 +8,19 @@ body {
     padding: 20px;
     background-color: #101417;
     border-radius: 20px;
-    height: 100vh;
+    gap: 20px;
 }
 
 .left-section {
     flex: 1;
-    margin-right: 40px;
+    margin-right: 0;
     padding: 20px;
     border-radius: 8px;
 }
 
 .left-section h2 {
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .left-section p {
@@ -175,4 +175,18 @@ ul li {
 
 .about-card p strong {
     color: rgb(10, 187, 187);
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+    .resume-container{ gap: 16px; }
+}
+
+@media (max-width: 768px){
+    .resume-container{ flex-direction: column; }
+}
+
+@media (max-width: 480px){
+    .resume-container{ padding: 16px; }
+    .left-section, .right-section{ padding: 16px; }
 }

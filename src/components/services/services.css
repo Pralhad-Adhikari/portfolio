@@ -5,21 +5,23 @@
   .services-details {
     display: flex;
     flex-wrap: wrap; /* Allows items to wrap to the next line */
-    gap: 20px 100px;
+    gap: 20px 40px;
     color: white;
-    margin-left: 50px;
+    margin-left: 0;
     cursor: pointer;
+    justify-content: center;
   }
   
   .services-item {
     border-bottom: 1px outset #ddd; /* Light border */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: calc(40% - 20px); /* Two cards per row with margin */
+    width: calc(50% - 20px); /* Two cards per row */
     margin-bottom: 20px; /* Space between rows */
     padding: 20px; /* Internal padding */
     display: flex;
     flex-direction: column; /* Stack content vertically */
     justify-content: center; /* Center content vertically */
+    max-width: 520px;
   }
   .services-item h2{
     font-size: 25px;
@@ -33,7 +35,7 @@
   .services-top-bar {
     display: flex;
     align-items: center;
-    gap: 80%; /* Center items vertically */
+    justify-content: space-between;
     font-size: 20px;
     margin-bottom: 20px;
   }
@@ -52,15 +54,26 @@
     
   }
   
-
-/* Hover effect */
-.services-item:hover .services-top-bar h1, 
-.services-item:hover .arrow-icon,
-.services-item:hover h2 {
-  color:rgb(10, 187, 187); /* Change to your desired color on hover */
-}
-
-.services-item:hover .arrow-icon {
-    background-color:rgb(10, 187, 187);
-    color: white; /* Change background color of arrow on hover */
+  
+  /* Hover effect */
+  .services-item:hover .services-top-bar h1, 
+  .services-item:hover .arrow-icon,
+  .services-item:hover h2 {
+    color:rgb(10, 187, 187); /* Change to your desired color on hover */
+  }
+  
+  .services-item:hover .arrow-icon {
+      background-color:rgb(10, 187, 187);
+      color: white; /* Change background color of arrow on hover */
+    }
+  
+  /* Tablets */
+  @media (max-width: 768px){
+    .services-item{ width: 100%; }
+  }
+  
+  /* Mobile */
+  @media (max-width: 480px){
+    .services{ padding: 16px; }
+    .services-item{ padding: 16px; }
   }

@@ -8,3 +8,12 @@ body{
   color: wheat;
   font-family: 'outfit';
 }
+
+/* Light theme */
+body.light{
+  background: #fafafa;
+  color: #1c1f23;
+}
+
+/* Anchor smoothing (fallback for some browsers) */
+html{ scroll-behavior: smooth; }

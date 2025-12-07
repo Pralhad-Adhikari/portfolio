@@ -1,0 +1,11 @@
+.about{
+    border-radius: 20px;
+    background-color: #101417;
+    min-height: 100vh; /* Ensure each section takes up at least full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+}

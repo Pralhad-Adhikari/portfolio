@@ -3,9 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://pralhad-adhikari.github.io/portfolio",
   "scripts": {
-     "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "start": "react-scripts start",
     "build": "vite build",
@@ -13,6 +14,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
@@ -20,7 +22,8 @@
     "react": "^18.3.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0"
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^7.10.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

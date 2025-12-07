@@ -6,16 +6,26 @@
 /* Main content container */
 .content {
     width: 100%; /* Take up the rest of the page width */
-    padding: 40px;
+    padding: 100px 40px 40px 40px; /* top padding for fixed header */
     height: 100vh; /* Full height to make it scrollable */
     box-sizing: border-box;
     overflow-y: auto; /* Enable vertical scrolling */
     display: flex;
     flex-direction: column; /* Stack sections vertically */
-    gap: 50px; /* Add spacing between sections */
-    margin-top: -20px;
-   
+    gap: 24px; /* Consistent spacing between sections */
+    scroll-behavior: smooth;
 }
 
+/* Section wrapper fixes */
+section{ scroll-margin-top: 80px; }
+
 /* Style individual sections */
+
+/* Responsive adjustments */
+@media (max-width: 768px){
+    .content{ padding: 88px 20px 24px 20px; }
+}
+@media (max-width: 480px){
+    .content{ padding: 80px 12px 20px 12px; gap: 16px; }
+}
 

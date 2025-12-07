@@ -5,7 +5,7 @@
     width: 100%;
     background-color: #101417;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 24px; /* add a bit more right padding */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 0;
     padding: 0;
     gap: 20px; /* Space between each menu item */
     font-size: 16px;
@@ -70,45 +70,88 @@
     border-bottom: 2px solid purple; /* Add purple underline */
 }
 
-/* Right side: Theme and Settings */
-.nav-bottom {
-    list-style: none;
-    margin-right: 30px;
+/* Right side controls */
+.nav-right{
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between each menu item */
-    font-size: 16px;
-    padding: 0;
+    gap: 10px;
+    margin-right: 16px; /* breathing room from window edge */
 }
 
-.nav-bottom li {
+.theme-button, .settings-btn, .menu-toggle{
+    background: transparent;
+    color: inherit;
+    border: none;
     cursor: pointer;
-    padding: 10px 15px;
-    transition: color 0.3s, border-bottom 0.3s; /* Smooth hover effects */
+    padding: 8px 10px;
+    font-size: 16px;
 }
 
-.nav-bottom li:hover {
-    color: purple;
+.menu-toggle{ display: none; }
+
+.theme-dropdown{ position: relative; margin-right: 8px; }
+.theme-menu{
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #1b2126;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 90vw; /* prevent overflow on small screens */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
+.theme-menu button{
+    background: transparent;
+    color: #fff;
+    border: none;
+    text-align: left;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.theme-menu button:hover{ background: rgba(255,255,255,0.08); }
+.theme-menu button.active{ background: rgba(128,0,128,0.25); }
 
 /* Responsive layout for mobile */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
-        padding: 10px;
+        padding: 10px 16px; /* compact side padding on mobile */
     }
 
+    .menu-toggle{ display: inline-flex; }
+
     .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #101417;
         flex-direction: column;
         gap: 10px;
+        padding: 10px 0;
+        display: none;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
+    .nav-menu.open{ display: flex; }
 
     .username {
         font-size: 16px;
     }
 
     .header-top {
-        flex-direction: column;
         gap: 10px;
     }
 }
+
+/* Light theme overrides */
+body.light .header{ background: #ffffff; color: #1c1f23; }
+body.light .nav-menu{ color: #1c1f23; }
+body.light .nav-menu li:hover{ color: #6a32a8; border-bottom-color: #6a32a8; }
+body.light .theme-menu{ background: #ffffff; color: #1c1f23; border-color: rgba(0,0,0,0.1); }
+body.light .theme-menu button{ color: #1c1f23; }
