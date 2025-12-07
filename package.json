@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://pralhad-adhikari.github.io/portfolio",
+  "homepage": "http://pralhad-adhikari.com.np/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
